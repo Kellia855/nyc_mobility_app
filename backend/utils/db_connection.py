@@ -1,9 +1,16 @@
 """
 Database connection utilities for the NYC Mobility App
 """
+import os
+import sys
 import mysql.connector
 from mysql.connector import Error
-from ..config.db_config import get_db_config
+
+# Add the backend directory to the path for imports
+backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if backend_dir not in sys.path:
+    sys.path.append(backend_dir)
+from config.db_config import get_db_config
 
 def create_connection():
     """Create a connection to the MySQL database"""
