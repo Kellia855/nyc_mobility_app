@@ -65,12 +65,27 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Configure the database:
-   - Create a MySQL database named `nyc_mobility`
-   - Create a user with appropriate permissions
-   - Update `backend/config/db_config.py` with your database credentials
+4. Setup the database:
+```
+ # Create database and user (run as MySQL root)
+mysql -u root -p < database/init_db.sql
+```
+5. Configure the database connection:
+  Edit backend/config/db_config.py with your MYSQL credentials:
+```
+MYSQL_HOST = "localhost"
+MYSQL_USER = "kellia"       # Use the username you created
+MYSQL_PASSWORD = "pass123"  # Use the password you created
+MYSQL_DB = "nyc_mobility"   # This should match the database name
+```
+6. Create the database tables
+```
 
-5. Run database setup and data insertion:
+# Create tables (run as your MySQL user)
+mysql -u 'your_username' -p nyc_mobility < backend/models/schema.sql
+```
+
+5. Data insertion:
 ```
 cd backend
 python scripts/insert_data.py
