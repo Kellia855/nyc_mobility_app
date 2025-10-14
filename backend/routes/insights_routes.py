@@ -1,8 +1,15 @@
 """
 Routes for insights and analytics API endpoints
 """
+import os
+import sys
 from flask import Blueprint, jsonify, request
 import mysql.connector
+
+# Add the backend directory to the path for imports
+backend_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if backend_dir not in sys.path:
+    sys.path.append(backend_dir)
 from config.db_config import get_db_config
 
 # Create a Blueprint for insights routes
