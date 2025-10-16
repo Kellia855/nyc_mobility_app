@@ -152,7 +152,7 @@ Flask is configured to serve static files from the `frontend/static` directory. 
 
 
 ## Video Walkthrough link
- - Find it here: https://youtu.be/JUBmoTxLdy8
+ - Find it here: https://youtu.be/TeAED3Ia2tA
 
 ## Contributors
 - Kellia Kamikazi
