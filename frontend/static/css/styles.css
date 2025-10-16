@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; 
+    color: #333;
+}
+
+header {
+    background-color: #003366; /* NYC Transit blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Styling for the Insights section */
+#insights-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.insight-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #e0f7fa; /* Light blue */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.insight-card h3 {
+    margin-top: 0;
+    color: #00796b;
+}
+
+/* Styling for the Trips table */
+#trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#trips-table th, #trips-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#trips-table th {
+    background-color: #f0f0f0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Error style for troubleshooting */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Filter controls styling */
+.filter-controls {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filter-controls label {
+    font-weight: bold;
+    color: #333;
+}
+
+.filter-controls input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.filter-controls button {
+    padding: 8px 16px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.filter-controls button:hover {
+    background-color: #005599;
+}
+
+/* Visualization section styling */
+#visualization-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#hourlyChart, #passengerChart {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Chart insight text styling */
+.chart-insight {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e8f4f8;
+    border-left: 4px solid #003366;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.chart-insight strong {
+    color: #003366;
+}
+
+/* Passenger section styling */
+#passenger-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+

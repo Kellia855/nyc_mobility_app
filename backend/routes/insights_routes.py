@@ -96,7 +96,51 @@ def get_hourly_pattern():
         cursor.close()
         conn.close()
 
-        return jsonify(hourly_data)
+        # Format data for Chart.js
+        hours = [row['hour'] for row in hourly_data]
+        counts = [row['trip_count'] for row in hourly_data]
+
+        return jsonify({
+            "hours": hours,
+            "counts": counts
+        })
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@insights_bp.route('/passenger-distribution', methods=['GET'])
+def get_passenger_distribution():
+    """Get distribution of trips by passenger count"""
+    try:
+        conn = get_db_connection()
+        if not conn:
+            return jsonify({"error": "Database connection failed"}), 500
+
+        cursor = conn.cursor(dictionary=True)
+
+        # Get trip counts grouped by passenger count
+        query = """
+        SELECT passenger_count, COUNT(*) as trip_count 
+        FROM trips 
+        WHERE passenger_count IS NOT NULL
+        GROUP BY passenger_count
+        ORDER BY passenger_count
+        """
+        cursor.execute(query)
+        passenger_data = cursor.fetchall()
+
+        cursor.close()
+        conn.close()
+
+        # Format data for Chart.js
+        labels = [f"{row['passenger_count']} passenger{'s' if row['passenger_count'] > 1 else ''}" for row in passenger_data]
+        counts = [row['trip_count'] for row in passenger_data]
+
+        return jsonify({
+            "labels": labels,
+            "counts": counts
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
