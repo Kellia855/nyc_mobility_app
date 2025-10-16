@@ -150,8 +150,11 @@ Flask is configured to serve static files from the `frontend/static` directory. 
 - If you see CORS errors, ensure `flask-cors` is installed and `CORS(app)` is called in `app.py`.
 - For database errors, check your MySQL configuration in `backend/config/db_config.py`.
 
+
+## Video Walkthrough link
+ - Find it here: https://youtu.be/JUBmoTxLdy8
+
 ## Contributors
 - Kellia Kamikazi
 - Aurore Umumararungu
 - Rolande Tumugane
-
